@@ -48,3 +48,23 @@ class ActionDecorator(list):
             # we do not need to modify the function
             return f
         return wrap
+
+
+class NoDeleteSelectedModelAdminMixin(object):
+    """
+    This mixin removes the delete_selected admin action from the
+    admin action drop down, when show_delete_selected is set to False.
+    """
+    
+    show_delete_selected = False
+
+    def get_actions(self, request):
+        actions = super(NoDeleteSelectedModelAdminMixin,
+                        self).get_actions(request)
+        if not self.get_show_delete_selected():
+            if 'delete_selected' in actions:
+                del actions['delete_selected']
+        return actions
+    
+    def get_show_delete_selected(self):
+        return self.show_delete_selected
