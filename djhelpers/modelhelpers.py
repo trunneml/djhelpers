@@ -23,7 +23,7 @@ def short_description(description, **kwargs):
     decorated function.
     
     :param description: the value for the short description attribute
-    :type description: str|unicode
+    :type description: str or unicode
     
     :return: the decorator function
     :rtype: function 

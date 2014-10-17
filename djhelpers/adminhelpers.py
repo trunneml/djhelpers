@@ -35,7 +35,7 @@ class ActionDecorator(list):
         adds it to the (admin actions) list.
         
         :param description: the value for the short description attribute
-        :type description: str|unicode
+        :type description: str or unicode
     
         :return: the decorator function
         :rtype: function

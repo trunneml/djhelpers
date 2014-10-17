@@ -11,7 +11,11 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+Django admin helpers
+======================
 
+.. automodule:: djhelpers.adminhelpers
+   :members:
 
 Indices and tables
 ==================
