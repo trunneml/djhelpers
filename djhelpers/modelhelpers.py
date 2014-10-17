@@ -21,6 +21,12 @@ def short_description(description, **kwargs):
     
     It also adds every keyword argument as extra attribute to the
     decorated function.
+    
+    :param description: the value for the short description attribute
+    :type description: str|unicode
+    
+    :return: the decorator function
+    :rtype: function 
     """
     def _wrapper(func):
         func.short_description = description

@@ -29,14 +29,20 @@ class ActionDecorator(list):
     action method in your model admin class.
     """
     
-    def action(self, desc):
+    def action(self, description):
         """
         Adds a short_description field to the decorated method and
         adds it to the (admin actions) list.
+        
+        :param description: the value for the short description attribute
+        :type description: str|unicode
+    
+        :return: the decorator function
+        :rtype: function
         """
         def wrap(f):
             # set description
-            f.short_description = desc
+            f.short_description = description
             # add function to admin actions
             self.append(f)
             # we do not need to modify the function
