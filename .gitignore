@@ -1,6 +1,10 @@
 # PyDev stuff
 /.project
 /.pydevproject
+/.settings
+
+# Sphinx
+/_build
 
 # Virtualenv
 /env
