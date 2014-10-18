@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 '''
 
-from . import modelhelpers
+from djhelpers import modelhelpers
 
 short_description = modelhelpers.short_description
 
@@ -32,12 +32,13 @@ class ActionDecorator(list):
     >>> from django.contrib import admin
     >>>
     >>> class SomeModelAdmin(admin.ModelAdmin):
-    >>>
-    >>>     actions = ActionDecorator()
-    >>>
-    >>>     @actions.action("Mark selected stories as published")
-    >>>     def make_published(modeladmin, request, queryset):
-    >>>         queryset.update(status='p')
+    ...
+    ...     actions = ActionDecorator()
+    ...
+    ...     @actions.action("Mark selected stories as published")
+    ...     def make_published(self, request, queryset):
+    ...         queryset.update(status='p')
+    ...
     >>>
     """
     
