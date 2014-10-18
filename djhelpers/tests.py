@@ -66,5 +66,8 @@ class ActionDecoratorTest(unittest.TestCase):
         self.assertEqual(_t.short_description, desc)
 
 
+if __name__ == '__main__':
+    unittest.main()
+
         
         
