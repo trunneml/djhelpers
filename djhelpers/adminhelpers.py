@@ -16,7 +16,6 @@ limitations under the License.
 
 from . import modelhelpers
 
-
 short_description = modelhelpers.short_description
 
 
@@ -27,6 +26,19 @@ class ActionDecorator(list):
     Just create a actions field of that class in our model admin and
     write @actions.action('Nice description') on top of every admin
     action method in your model admin class.
+    
+    Usage:
+    
+    >>> from django.contrib import admin
+    >>>
+    >>> class SomeModelAdmin(admin.ModelAdmin):
+    >>>
+    >>>     actions = ActionDecorator()
+    >>>
+    >>>     @actions.action("Mark selected stories as published")
+    >>>     def make_published(modeladmin, request, queryset):
+    >>>         queryset.update(status='p')
+    >>>
     """
     
     def action(self, description):
